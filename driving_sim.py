@@ -8,9 +8,9 @@ import objects
 background_colour = (255, 255, 255)
 dt = 1/30
 
-FSF = 2  # Field Scale Factor
+FSF = 4  # Field Scale Factor
 
-goal_diameter = 48
+goal_diameter = 48+4
 ball_diameter = int(9.5)
 goal_radius = goal_diameter*FSF/2
 field_width = 324*2
@@ -18,6 +18,8 @@ field_height = 162*2
 driving_speed = 15*12*FSF  # 15 ft/s
 
 (width, height) = (field_width*FSF, field_height*FSF)
+
+field_img = pygame.image.load(f'field_layout_{FSF}.png')
 
 
 def get_center_coordinates(x, y):
@@ -47,30 +49,13 @@ pygame.display.set_caption('Tutorial 4')
 
 particle = objects.Rectangle(
     screen, (448, 324), ball_diameter)
-print(get_field_coordinates_polar(200, 0))
 
 number_of_particles = 1
 my_particles = []
 
-# for n in range(number_of_particles):
-#     size = random.randint(50, 100)
-#     x = random.randint(size, width-size)
-#     y = random.randint(size, height-size)
-
-#     particle = objects.Rectangle(screen, (x, y), size)
-#     particle.speed = random.random()
-#     particle.angle = random.uniform(0, math.pi*2)
-
-#     my_particles.append(particle)
-
 pygame.joystick.init()
 joysticks = [pygame.joystick.Joystick(x)
              for x in range(pygame.joystick.get_count())]
-# joystick = pygame.joystick.Joystick(0)
-print(screen, "Number of joysticks: {}".format(pygame.joystick.get_count()))
-
-# sample_surface = pygame.Surface((400, 300), pygame.SRCALPHA)
-# sample_surface.fill(0, 0, 0)
 
 joystick = pygame.joystick.Joystick(0)
 joystick.init()
@@ -80,13 +65,13 @@ x = 10
 y = 10
 theta = 0
 distances = [
-    (0, 25, 90),
-    (65, 25, 80),
-    (140, 30, 75),
-    (185, 30, 70),
+    (0, 28, 90),
+    (65, 28, 80),
+    (140, 30, 73),
+    (185, 32, 71),
     (250, 35, 70),
-    (300, 38, 70),
-    (100000, 38, 70),
+    (300, 35, 65),
+    (400, 44, 63),
 ]
 
 
@@ -97,7 +82,6 @@ def interpolate_distances(d):
                 d0 = distances[i][0]
                 d1 = distances[i+1][0]
                 p = (d-d0)/(d1-d0)
-                print(d0, d, d1, p)
                 v = distances[i][1] + p*(distances[i+1][1] - distances[i][1])
                 theta = distances[i][2] + p * \
                     (distances[i+1][2] - distances[i][2])
@@ -108,19 +92,22 @@ def interpolate_distances(d):
 
 def get_shot_params(x, y):
     x_c, y_c, angle = get_center_coordinates(x, y)
-    d = math.sqrt(x_c**2 + y_c**2)/2
+    d = math.sqrt(x_c**2 + y_c**2)/FSF
     v, theta_v = interpolate_distances(d)
     theta_h = angle
     return v*12, theta_v*math.pi/180, math.pi - theta_h
 
 
 def get_moving_shot_params(V, phi_v, phi_h, vx, vy):
-    theta_h = math.atan((V*math.cos(phi_v)*math.sin(phi_h) + vy) /
-                        (V*math.cos(phi_v)*math.cos(phi_h) + vx))
-    theta_v = mpmath.acot((V*math.cos(phi_v)*math.cos(phi_h) +
-                          vx) / (V*math.sin(phi_v)*math.cos(theta_h)))
+    theta_h = math.atan2((V*math.cos(phi_v)*math.sin(phi_h) - vy),
+                         (V*math.cos(phi_v)*math.cos(phi_h) - vx))
+    theta_v = math.atan(1/((V*math.cos(phi_v)*math.cos(phi_h) -
+                            vx) / (V*math.sin(phi_v)*math.cos(theta_h))))
     vs = V*math.sin(phi_v)/math.sin(theta_v)
     return vs, theta_v, theta_h
+
+
+# def is_outside_field
 
 
 while running:
@@ -129,16 +116,13 @@ while running:
             running = False
 
     screen.fill(background_colour)
+    screen.blit(field_img, (0, 0))
 
     for particle in my_particles:
         particle.move()
         particle.display()
     pygame.draw.circle(screen, (0, 0, 0), (width/2, height/2),
-                       goal_diameter*FSF/2, 2*FSF)
-
-    # (x, y) = get_field_coordinates_polar(200, math.pi*i/dt)
-    # particle.x = x
-    # particle.y = y
+                       goal_radius, 2*FSF)
 
     vx = joystick.get_axis(0)*driving_speed
     vy = joystick.get_axis(1)*driving_speed
@@ -150,22 +134,16 @@ while running:
     y += vy*dt
     theta += v_theta*dt
 
-    # pygame.transform.rotate(sample_surface, theta)
-
     pygame.draw.line(screen, (0, 0, 0), (x, y), objects.get_forward_vector(
-        x, y, 10, theta), 2)
+        x, y, 29*FSF, theta), 2)
 
     if (shoot_button == 1):
         v_shot, theta_v, theta_h = get_shot_params(x, y)
         print(v_shot, theta_v, theta_h)
         v_shot, theta_v, theta_h = get_moving_shot_params(
-            v_shot, theta_v, theta_h, -vx/2, -vy/2)
-        print(v_shot, theta_v, theta_h, vx, vy)
+            v_shot, theta_v, theta_h, vx/FSF, vy/FSF)
+        print(v_shot, theta_v, theta_h)
         theta = theta_h
-        # print(v_shot/12, theta_v*180/math.pi, theta_h)
-        # v_shot = 38*12  # ft/s
-        # theta_v = 70*math.pi/180
-        # theta_h = theta
 
         v_shot_x = v_shot * math.cos(theta_v) * math.cos(theta_h) * FSF
         v_shot_y = v_shot * math.cos(theta_v) * math.sin(theta_h) * FSF
@@ -173,19 +151,21 @@ while running:
 
         new_particle = objects.BallTrajectory(
             screen, (x, y, 0), (v_shot_x + vx, v_shot_y + vy, v_shot_z), dt)
-        # new_particle = objects.Circle(screen, (x, y), ball_diameter*FSF)
-        # new_particle.angle = theta + math.pi/2
-        # new_particle.speed = 10*FSF
         my_particles.append(new_particle)
 
     if (auto_aim_button == 1):
+        # v_shot, theta_v, theta_h = get_shot_params(x, y)
+        # v_shot, theta_v, theta_h = get_moving_shot_params(
+        #     v_shot, theta_v, theta_h, -vx/2, -vy/2)
+        # theta = theta_h
+        # print(theta*180/math.pi)
         x_c, y_c, angle = get_center_coordinates(x, y)
-        d = math.sqrt(x_c**2 + y_c**2)/2
-        print(d)
+        d = math.sqrt(x_c**2 + y_c**2)/FSF
         theta = math.pi - angle
+        print(d)
 
     pygame.draw.polygon(screen, (0, 0, 0), objects.get_square_polygon_points(
-        x, y, 29*FSF*8, theta), 1)
+        x, y, (29+6)*FSF, theta), 3)
 
     # for i in range(pygame.joystick.get_count()):
     #     joystick = pygame.joystick.Joystick(i)

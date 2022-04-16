@@ -6,7 +6,7 @@ GOAL_HEIGHT = 8*12 + 8
 
 def get_square_polygon_points(x, y, l, theta):
     points = []
-    r = math.sqrt(l)
+    r = l/math.sqrt(2)
     for i in range(4):
         angle = theta + math.pi/2*i + math.pi/4
         points.append((int(x + r*math.cos(angle)), int(y + r*math.sin(angle))))
@@ -48,7 +48,7 @@ class Circle(Object):
 
 
 class BallTrajectory():
-    def __init__(self, screen, xyz, vxyz, dt):
+    def __init__(self, screen, xyz, vxyz, dt, FSF=2):
         self.x = xyz[0]
         self.y = xyz[1]
         self.z = xyz[2]
@@ -56,10 +56,11 @@ class BallTrajectory():
         self.vy = vxyz[1]
         self.vz = vxyz[2]
         self.colour = (0, 0, 255)
-        self.thickness = 2
+        self.thickness = 2*FSF
         self.screen = screen
         self.did_reach_height = False
         self.dt = dt
+        self.FSF = FSF
 
     def move(self):
         self.x += self.vx * self.dt
@@ -71,19 +72,19 @@ class BallTrajectory():
                 self.vx = 0
                 self.vy = 0
                 self.vz = 0
-                self.size = 2
+                self.size = 2*self.FSF
             else:  # above goal, not low enough yet
-                self.size = int(self.z/12)
+                self.size = int(self.z/12)*self.FSF
         elif self.z >= GOAL_HEIGHT:
             self.did_reach_height = True
-            self.size = int(self.z/12)
+            self.size = int(self.z/12)*self.FSF
         elif self.z < 0:  # below ground
             self.vx = 0
             self.vy = 0
             self.vz = 0
-            self.size = 2
+            self.size = 2*self.FSF
         else:
-            self.size = int(self.z/12)
+            self.size = int(self.z/12)*self.FSF
 
     def display(self):
         pygame.draw.circle(self.screen, self.colour, (int(

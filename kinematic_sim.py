@@ -94,7 +94,7 @@ def spin(v0, theta0, drag_coefficient, spin_coefficient):
     vy = v0*math.sin(theta0)
     c = (math.pi/16) * p * diameter**2  # kg/m^3*m^2 = kg/m
     d = 2*math.pi*p*(r)**2/r
-    b = 4.1*10**-4*2/4
+    b = 4.1*10**-4*2#/4
     # print("C:", c)
     # print("Constants", b, d)
     e = 3*math.pi*mu*r/(2*mass)

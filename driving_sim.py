@@ -8,7 +8,7 @@ import objects
 background_colour = (255, 255, 255)
 dt = 1/30
 
-FSF = 4  # Field Scale Factor
+FSF = 3  # Field Scale Factor
 
 goal_diameter = 48+4
 ball_diameter = int(9.5)
@@ -71,7 +71,7 @@ distances = [
     (185, 32, 71),
     (250, 35, 70),
     (300, 35, 65),
-    (400, 44, 63),
+    (400, 40, 63),
 ]
 
 

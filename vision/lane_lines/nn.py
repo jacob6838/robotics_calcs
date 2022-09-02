@@ -23,6 +23,7 @@ from tqdm import tqdm
 import random
 import argparse
 import pixel_angles
+import glob
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -58,11 +59,11 @@ model.eval()
 print("loaded model")
 
 
-def detect(img):
-    return get_lane_points(img)
+def detect(img, path):
+    return get_lane_points(img, path)
 
 
-def get_lane_points(img):
+def get_lane_points(img, path):
     frame = img
     img = transform(img).to(device)
     if img.ndimension() == 3:
@@ -91,14 +92,20 @@ def get_lane_points(img):
     _, ll_seg_mask = torch.max(ll_seg_mask, 1)
     ll_seg_mask = ll_seg_mask.int().squeeze().cpu().numpy()
 
-    # img_det = show_seg_result(
-    #     frame, (da_seg_mask, ll_seg_mask), _, _, is_demo=True)
+    img_det = show_seg_result(
+        frame, (da_seg_mask, ll_seg_mask), _, _, is_demo=True)
+
+    out_path = './parking_lanes'
+    name_suffix = path.split('\\')[-1]
     # cv2.imshow('img_det', img_det)
 
     # Lane line post-processing
     ll_seg_mask = morphological_process(
         ll_seg_mask, kernel_size=7, func_type=cv2.MORPH_OPEN)
     ll_seg_mask, lines = connect_lane(ll_seg_mask)
+    print(cv2.imwrite(f"{out_path}/da_seg_mask_{name_suffix}", da_seg_mask))
+    cv2.imwrite(f"{out_path}/img_det_{name_suffix}", img_det)
+    cv2.imwrite(f"{out_path}/ll_seg_mask_{name_suffix}", ll_seg_mask)
     # cv2.imwrite('output.png', ll_seg_mask)
     # cv2.imshow('ll_seg_mask', ll_seg_mask)
     # cv2.waitKey()
@@ -133,10 +140,14 @@ def retrieve_lanes(lines):
     return left_lane, right_lane
 
 
+images = glob.glob('./parking_lanes/*.jpg')
 if __name__ == '__main__':
     # path = "mirv_lane_lines.png"
     path = "img_01.png"
-    img = cv2.imread(path)
+    for path in images:
+        img = cv2.imread(path)
+        img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
+        print(path)
 
-    lane_lines = detect(img)
-    lanes = retrieve_lanes(lane_lines)
+        lane_lines = detect(img, path)
+        lanes = retrieve_lanes(lane_lines)

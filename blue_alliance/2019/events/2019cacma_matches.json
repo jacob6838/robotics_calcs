@@ -1,0 +1,1982 @@
+[
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 70, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 86, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc4414", 
+          "frc6821"
+        ]
+      }
+    }, 
+    "comp_level": "f", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_f1m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 75, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 95, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc4414", 
+          "frc6821"
+        ]
+      }
+    }, 
+    "comp_level": "f", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_f1m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 0, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc9998", 
+          "frc9999", 
+          "frc9997"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 1, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc4414", 
+          "frc6821"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf1m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 0, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc9998", 
+          "frc9999", 
+          "frc9997"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 1, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc4414", 
+          "frc6821"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf1m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 53, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc3863", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 32, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc3759", 
+          "frc7326"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf2m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 2, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 50, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc3863", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 52, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc3759", 
+          "frc7326"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf2m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 2, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 71, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc3863", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 42, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc3759", 
+          "frc7326"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf2m3", 
+    "match_number": 3, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 2, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 49, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3328", 
+          "frc4", 
+          "frc599"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 68, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf3m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 3, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 46, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3328", 
+          "frc4", 
+          "frc599"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 69, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf3m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 3, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 34, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc2584B", 
+          "frc980"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 73, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc2584", 
+          "frc3863B"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf4m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 4, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 35, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc2584B", 
+          "frc980"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 90, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc2584", 
+          "frc3863B"
+        ]
+      }
+    }, 
+    "comp_level": "qf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qf4m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 4, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 25, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc7326", 
+          "frc2584"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 19, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc599", 
+          "frc3328", 
+          "frc2584B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": 1566093722, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566072000, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 32, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc599", 
+          "frc4", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 52, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3328", 
+          "frc691", 
+          "frc5199"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm10", 
+    "match_number": 10, 
+    "post_result_time": null, 
+    "predicted_time": 1566099182, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566077400, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 55, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102B", 
+          "frc5818", 
+          "frc3863B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 62, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414", 
+          "frc2102", 
+          "frc980"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm11", 
+    "match_number": 11, 
+    "post_result_time": null, 
+    "predicted_time": 1566099782, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566078000, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 80, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5199", 
+          "frc3863", 
+          "frc4414B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 21, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7326", 
+          "frc6821", 
+          "frc3759"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm12", 
+    "match_number": 12, 
+    "post_result_time": null, 
+    "predicted_time": 1566100322, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566078540, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 22, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc599", 
+          "frc2102B", 
+          "frc691"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 45, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3328", 
+          "frc2584", 
+          "frc4"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm13", 
+    "match_number": 13, 
+    "post_result_time": null, 
+    "predicted_time": 1566100862, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566079080, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 46, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414", 
+          "frc2659", 
+          "frc7327"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 37, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584B", 
+          "frc980", 
+          "frc3925"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm14", 
+    "match_number": 14, 
+    "post_result_time": null, 
+    "predicted_time": 1566101402, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566079620, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 46, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc599", 
+          "frc7326"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 62, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4", 
+          "frc5199", 
+          "frc3759"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm15", 
+    "match_number": 15, 
+    "post_result_time": null, 
+    "predicted_time": 1566101942, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566080160, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 46, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc980", 
+          "frc3863", 
+          "frc2102"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 54, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3925", 
+          "frc2102B", 
+          "frc2659"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm16", 
+    "match_number": 16, 
+    "post_result_time": null, 
+    "predicted_time": 1566102482, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566080700, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 46, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863B", 
+          "frc2584B", 
+          "frc6821"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 22, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc3328", 
+          "frc691"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm17", 
+    "match_number": 17, 
+    "post_result_time": null, 
+    "predicted_time": 1566103022, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566081240, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 39, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc980", 
+          "frc2584", 
+          "frc3759"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 89, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc4414", 
+          "frc5818"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm18", 
+    "match_number": 18, 
+    "post_result_time": null, 
+    "predicted_time": 1566103562, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566081780, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 55, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc6821", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 48, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc5199", 
+          "frc599"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm19", 
+    "match_number": 19, 
+    "post_result_time": null, 
+    "predicted_time": 1566104102, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566082320, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 56, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4", 
+          "frc3925", 
+          "frc4414"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 36, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc6821", 
+          "frc5818", 
+          "frc980"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": 1566094322, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566072600, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 64, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584B", 
+          "frc7327", 
+          "frc4"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 61, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584", 
+          "frc4414B", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm20", 
+    "match_number": 20, 
+    "post_result_time": null, 
+    "predicted_time": 1566104642, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566082860, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 59, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3328", 
+          "frc2659", 
+          "frc3863"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 48, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863B", 
+          "frc7326", 
+          "frc4414"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm21", 
+    "match_number": 21, 
+    "post_result_time": null, 
+    "predicted_time": 1566105182, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566083400, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 75, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4", 
+          "frc5818", 
+          "frc2102"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 50, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3759", 
+          "frc2584", 
+          "frc7327"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm22", 
+    "match_number": 22, 
+    "post_result_time": null, 
+    "predicted_time": 1566105722, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566083940, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 47, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102B", 
+          "frc3328", 
+          "frc4414"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 63, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc6821", 
+          "frc2659", 
+          "frc5199"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm23", 
+    "match_number": 23, 
+    "post_result_time": null, 
+    "predicted_time": 1566106262, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566084480, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 49, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc3863", 
+          "frc2584B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 47, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc980", 
+          "frc599"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm24", 
+    "match_number": 24, 
+    "post_result_time": null, 
+    "predicted_time": 1566106802, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566085020, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 77, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7326", 
+          "frc4414", 
+          "frc5199"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 63, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584", 
+          "frc3925", 
+          "frc3863B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm25", 
+    "match_number": 25, 
+    "post_result_time": null, 
+    "predicted_time": 1566107342, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566085560, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 42, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc980", 
+          "frc3328"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 48, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc6821", 
+          "frc599", 
+          "frc4414B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm26", 
+    "match_number": 26, 
+    "post_result_time": null, 
+    "predicted_time": 1566107882, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566086100, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 32, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584B", 
+          "frc2102", 
+          "frc2102B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 68, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3925", 
+          "frc3863", 
+          "frc5818"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm27", 
+    "match_number": 27, 
+    "post_result_time": null, 
+    "predicted_time": 1566108422, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566086640, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 60, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3759", 
+          "frc3863B", 
+          "frc2659"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 30, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7326", 
+          "frc691", 
+          "frc4"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm28", 
+    "match_number": 28, 
+    "post_result_time": null, 
+    "predicted_time": 1566108962, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566087180, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 43, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863", 
+          "frc7327", 
+          "frc4414B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 67, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414", 
+          "frc2584", 
+          "frc599"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm29", 
+    "match_number": 29, 
+    "post_result_time": null, 
+    "predicted_time": 1566163982, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566142200, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 28, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc3863B", 
+          "frc3759"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 74, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm3", 
+    "match_number": 3, 
+    "post_result_time": null, 
+    "predicted_time": 1566094982, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566073200, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 19, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3925", 
+          "frc3328", 
+          "frc7326"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 36, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc691", 
+          "frc2102B", 
+          "frc980"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm30", 
+    "match_number": 30, 
+    "post_result_time": null, 
+    "predicted_time": 1566164882, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566143100, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 67, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc2102", 
+          "frc6821"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 79, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5199", 
+          "frc2584B", 
+          "frc5818"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm31", 
+    "match_number": 31, 
+    "post_result_time": null, 
+    "predicted_time": 1566165782, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566144000, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 47, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3759", 
+          "frc4414B", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 32, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4", 
+          "frc3863B", 
+          "frc3328"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm32", 
+    "match_number": 32, 
+    "post_result_time": null, 
+    "predicted_time": 1566166682, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566144900, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 76, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc691", 
+          "frc2584"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 54, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7326", 
+          "frc980", 
+          "frc2659"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm33", 
+    "match_number": 33, 
+    "post_result_time": null, 
+    "predicted_time": 1566167582, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566145800, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 49, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5199", 
+          "frc2584B", 
+          "frc7327"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 43, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863", 
+          "frc4", 
+          "frc3863B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm34", 
+    "match_number": 34, 
+    "post_result_time": null, 
+    "predicted_time": 1566168482, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566146700, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 60, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414", 
+          "frc599", 
+          "frc6821"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 30, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc3759", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm35", 
+    "match_number": 35, 
+    "post_result_time": null, 
+    "predicted_time": 1566169382, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566147600, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 80, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc5199", 
+          "frc3328"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 56, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc2584B", 
+          "frc4414B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm36", 
+    "match_number": 36, 
+    "post_result_time": null, 
+    "predicted_time": 1566170282, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566148500, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 50, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3925", 
+          "frc7327", 
+          "frc2102"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 66, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3759", 
+          "frc691", 
+          "frc4414"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm37", 
+    "match_number": 37, 
+    "post_result_time": null, 
+    "predicted_time": 1566171182, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566149400, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 32, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc980", 
+          "frc4", 
+          "frc6821"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 41, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102B", 
+          "frc7326", 
+          "frc3863"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm38", 
+    "match_number": 38, 
+    "post_result_time": null, 
+    "predicted_time": 1566172082, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566150300, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 68, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584", 
+          "frc5818", 
+          "frc2659"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 65, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863B", 
+          "frc599", 
+          "frc7327"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm39", 
+    "match_number": 39, 
+    "post_result_time": null, 
+    "predicted_time": 1566172982, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566151200, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 32, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc2102", 
+          "frc4"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 31, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863", 
+          "frc2659", 
+          "frc599"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm4", 
+    "match_number": 4, 
+    "post_result_time": null, 
+    "predicted_time": 1566095582, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566073800, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 26, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102B", 
+          "frc6821", 
+          "frc3328"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 77, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc7326", 
+          "frc5818"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm5", 
+    "match_number": 5, 
+    "post_result_time": null, 
+    "predicted_time": 1566096182, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566074400, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 31, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5199", 
+          "frc3863B", 
+          "frc980"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 51, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc4414", 
+          "frc2584B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm6", 
+    "match_number": 6, 
+    "post_result_time": null, 
+    "predicted_time": 1566096782, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566075000, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 56, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc3863", 
+          "frc3759", 
+          "frc2584"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 49, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc3925", 
+          "frc691"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm7", 
+    "match_number": 7, 
+    "post_result_time": null, 
+    "predicted_time": 1566097382, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566075600, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 18, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc7327", 
+          "frc4414B", 
+          "frc7326"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 64, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc5818", 
+          "frc3863B"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm8", 
+    "match_number": 8, 
+    "post_result_time": null, 
+    "predicted_time": 1566097982, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566076200, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 52, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2584", 
+          "frc3759", 
+          "frc2584B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 51, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc6821", 
+          "frc2659", 
+          "frc3863"
+        ]
+      }
+    }, 
+    "comp_level": "qm", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_qm9", 
+    "match_number": 9, 
+    "post_result_time": null, 
+    "predicted_time": 1566098582, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": 1566076800, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 50, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc3863", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 76, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc4414", 
+          "frc6821"
+        ]
+      }
+    }, 
+    "comp_level": "sf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_sf1m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 62, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2102", 
+          "frc3863", 
+          "frc3925"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 71, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc5818", 
+          "frc4414", 
+          "frc6821"
+        ]
+      }
+    }, 
+    "comp_level": "sf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_sf1m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 1, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 56, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc2584", 
+          "frc3863B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 80, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "sf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_sf2m1", 
+    "match_number": 1, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 2, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 74, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc2584", 
+          "frc3863B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 72, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "sf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_sf2m2", 
+    "match_number": 2, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 2, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "blue"
+  }, 
+  {
+    "actual_time": null, 
+    "alliances": {
+      "blue": {
+        "dq_team_keys": [], 
+        "score": 63, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc4414B", 
+          "frc2584", 
+          "frc3863B"
+        ]
+      }, 
+      "red": {
+        "dq_team_keys": [], 
+        "score": 73, 
+        "surrogate_team_keys": [], 
+        "team_keys": [
+          "frc2659", 
+          "frc5199", 
+          "frc2102B"
+        ]
+      }
+    }, 
+    "comp_level": "sf", 
+    "event_key": "2019cacma", 
+    "key": "2019cacma_sf2m3", 
+    "match_number": 3, 
+    "post_result_time": null, 
+    "predicted_time": null, 
+    "score_breakdown": null, 
+    "set_number": 2, 
+    "time": null, 
+    "videos": [], 
+    "winning_alliance": "red"
+  }
+]

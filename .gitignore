@@ -1,2 +1,4 @@
 
-__pycache__/objects.cpython-37.pyc
+*.png
+*.pyc
+*.jpg

@@ -25,7 +25,7 @@ import argparse
 import pixel_angles
 import glob
 
-os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+# os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 normalize = transforms.Normalize(
@@ -44,7 +44,7 @@ width = 640/scale
 
 # TODO: verify this value
 shapes = ((height, width), ((0.5333333333333333, scale), (0.0, 12.0)))
-device = torch.device('cuda')
+device = torch.device('cpu')
 weights = "weights/End-to-end.pth"
 
 # Load model
@@ -142,6 +142,7 @@ def retrieve_lanes(lines):
 
 images = glob.glob('./parking_lanes/*.jpg')
 if __name__ == '__main__':
+    # path = "inference/input/img_1661985240_1.png"
     # path = "mirv_lane_lines.png"
     path = "img_01.png"
     for path in images:

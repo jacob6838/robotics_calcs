@@ -24,6 +24,7 @@ import random
 import argparse
 import pixel_angles
 import glob
+import json
 
 # os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -95,31 +96,34 @@ def get_lane_points(img, path):
     img_det = show_seg_result(
         frame, (da_seg_mask, ll_seg_mask), _, _, is_demo=True)
 
-    out_path = './parking_lanes'
     name_suffix = path.split('\\')[-1]
-    # cv2.imshow('img_det', img_det)
 
     # Lane line post-processing
     ll_seg_mask = morphological_process(
         ll_seg_mask, kernel_size=7, func_type=cv2.MORPH_OPEN)
     ll_seg_mask, lines = connect_lane(ll_seg_mask)
-    print(cv2.imwrite(f"{out_path}/da_seg_mask_{name_suffix}", da_seg_mask))
-    cv2.imwrite(f"{out_path}/img_det_{name_suffix}", img_det)
-    cv2.imwrite(f"{out_path}/ll_seg_mask_{name_suffix}", ll_seg_mask)
+    cv2.imwrite(f"{out_dir}/da_seg_mask_{name_suffix}", da_seg_mask)
+    cv2.imwrite(f"{out_dir}/img_det_{name_suffix}", img_det)
+    cv2.imwrite(f"{out_dir}/ll_seg_mask_{name_suffix}", ll_seg_mask)
+    cv2.imwrite(f"{out_dir}/img_{name_suffix}", frame)
     # cv2.imwrite('output.png', ll_seg_mask)
-    # cv2.imshow('ll_seg_mask', ll_seg_mask)
+    cv2.imshow('img_det', img_det)
+    cv2.imshow('ll_seg_mask', ll_seg_mask)
     # cv2.waitKey()
     return lines
 
 
 # Identify and generate left and right lane line positions + angles
-def retrieve_lanes(lines):
+def retrieve_lanes(lines, path):
     left_lane = None
     right_lane = None
+    results = {}
     for line in lines:
         line = list(line)
-        x_intercept, dx_sign, angle, x0, y0 = pixel_angles.get_line_equations(
-            line, 0, (0, 0), (0, -15), 0.15)
+        x_intercept, dx_sign, angle, x0, y0, x1, y1 = pixel_angles.get_line_equations(
+            line, 340, (0, 0), (0, -15), 0.175)
+
+        print(x_intercept, dx_sign, angle, x0, y0)
 
         if not angle or not x_intercept:  # No points on road, or horizontal
             continue
@@ -128,27 +132,40 @@ def retrieve_lanes(lines):
             if left_lane:
                 if x_intercept > left_lane[0]:  # Find closest to center
                     left_lane = (x_intercept, dx_sign, angle, x0, y0)
+                    results['left'] = {
+                        'x_intercept': x_intercept, 'dx_sign': dx_sign, 'angle': angle, 'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
             else:
                 left_lane = (x_intercept, dx_sign, angle, x0, y0)
+                results['left'] = {'x_intercept': x_intercept,
+                                   'dx_sign': dx_sign, 'angle': angle, 'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
         if x_intercept > 320 and dx_sign <= 0:  # Right side, pointing left
             if right_lane:
                 if x_intercept < right_lane[0]:  # Find closest to center
                     right_lane = (x_intercept, dx_sign, angle, x0, y0)
+                    results['right'] = {
+                        'x_intercept': x_intercept, 'dx_sign': dx_sign, 'angle': angle, 'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
             else:
                 right_lane = (x_intercept, dx_sign, angle, x0, y0)
+                results['right'] = {'x_intercept': x_intercept,
+                                    'dx_sign': dx_sign, 'angle': angle, 'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
 
+    name_suffix = path.split('\\')[-1]
+    print(results)
+    open(f"{out_dir}/results_{name_suffix.replace('.jpg', '.json').replace('.png', '.json')}",
+         'w').write(json.dumps(results))
     return left_lane, right_lane
 
 
-images = glob.glob('./parking_lanes/*.jpg')
+out_dir = 'calibration'
+# images = glob.glob('./parking_lanes/*.jpg')
+images = glob.glob('./lane_pictures/9_3/*.png')
 if __name__ == '__main__':
     # path = "inference/input/img_1661985240_1.png"
     # path = "mirv_lane_lines.png"
-    path = "img_01.png"
+    # path = "img_01.png"
     for path in images:
         img = cv2.imread(path)
         img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
-        print(path)
 
         lane_lines = detect(img, path)
-        lanes = retrieve_lanes(lane_lines)
+        lanes = retrieve_lanes(lane_lines, path)

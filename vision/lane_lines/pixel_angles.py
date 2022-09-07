@@ -2,15 +2,18 @@ import math
 import numpy as np
 from scipy import stats
 
-HFOV = 63
+HFOV = 69.5
 
-scale = 0.5
+scale = .5
 
 X = 640/2/scale
 Y = 480/2/scale
 aspect_ratio = Y/X
 
 VFOV = HFOV * aspect_ratio
+DETECTION_VERTICAL_OFFSET = 20/scale
+MIN_LINE_LENGTH = 50/scale
+LINE_EDGE_REMOVE_PERCENT = 10/100
 
 W = 1
 H = 1 * aspect_ratio
@@ -24,6 +27,7 @@ theta_v_corner = math.degrees(math.atan(H/math.sqrt(D**2 + W**2)))
 
 
 def rotateAxes2d(x, y, theta):
+    theta = math.radians(theta)
     x_r_x = x * math.sin(theta)
     x_r_y = x * math.cos(theta)
     y_r_x = y * math.sin(math.pi/2 + theta)
@@ -38,12 +42,18 @@ def get_angle(x, y):
     ratio_h = (x-X)/X
     ratio_v = (Y-y)/Y
 
+    # theta_h = HFOV/2 * abs(ratio_h) * get_sign(ratio_h)
     theta_h = (HFOV/2 + (theta_h_corner - HFOV/2)
-               * abs(ratio_v))*abs(ratio_h)*get_sign(ratio_h)
+               * abs(ratio_h)/2)*abs(ratio_h)*get_sign(ratio_h)
+    # theta_v = VFOV/2 * abs(ratio_v) * get_sign(ratio_v)
     theta_v = (VFOV/2 + (theta_v_corner - VFOV/2)
-               * abs(ratio_h))*abs(ratio_v)*get_sign(ratio_v)
+               * abs(ratio_v)/2)*abs(ratio_v)*get_sign(ratio_v)
 
     return theta_h, theta_v
+
+
+def get_line_length(x0, y0, x1, y1):
+    return math.sqrt((x1 - x0)**2 + (y1 - y0)**2)
 
 
 def get_real_position(x, y, imu_offset, rover_position, center_angle, height):
@@ -144,11 +154,26 @@ def get_intercept_pixels(line):
     return x_y480, get_sign(dx)
 
 
+def remove_end_of_line(line):
+    line.reverse()
+    l = len(line)
+    l_start = round(l * LINE_EDGE_REMOVE_PERCENT)
+    l_end = round(l * (1 - LINE_EDGE_REMOVE_PERCENT))
+    return line[l_start:l_end]
+
+
 def get_line_equations(line, imu_offset, rover_position, center_angle, height):
     points_x = []
     points_y = []
 
+    line = remove_end_of_line(line)
+    line = [[x, y+DETECTION_VERTICAL_OFFSET] for (x, y) in line]
+
     x_intercept, dx_sign = get_intercept_pixels(line)
+
+    l = get_line_length(*line[0], *line[-1])
+    if l < MIN_LINE_LENGTH:
+        return x_intercept, dx_sign, None, None, None, None, None
 
     for x, y in line:
 
@@ -162,9 +187,10 @@ def get_line_equations(line, imu_offset, rover_position, center_angle, height):
 
         angle = get_angle_robot_frame(points_x, points_y)
 
-        return x_intercept, dx_sign, angle, points_x[0], points_y[0]
+        # , line[0], line[-1]#
+        return x_intercept, dx_sign, angle, points_x[0], points_y[0], points_x[-1], points_y[-1]
     else:
-        return x_intercept, dx_sign, None, None, None
+        return x_intercept, dx_sign, None, None, None, None, None
 
 
 def get_sign(val):
@@ -191,3 +217,15 @@ def get_sign(val):
 # x = [0, 0]
 # y = [0, -1]
 # print(get_angle(x, y))
+
+# print([i / 0.0254 for i in get_real_position(320 /
+#       scale, 287/scale, 0, (0, 0), (0, -15), 0.175)])
+# print([i / 0.0254 for i in get_real_position(320 /
+#       scale, 132/scale, 0, (0, 0), (0, -15), 0.175)])
+# print([i / 0.0254 for i in get_real_position(72 /
+#       scale, 129/scale, 0, (0, 0), (0, -15), 0.175)])
+print([i / 0.0254 for i in get_real_position(0 /
+      scale, 129/scale, 0, (0, 0), (0, -15), 0.175)])
+
+
+# print(get_angle_robot_frame([0, 0], [1, 0]))

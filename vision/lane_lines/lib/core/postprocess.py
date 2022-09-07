@@ -159,6 +159,7 @@ def fitlane(mask, sel_labels, labels, stats):
         draw_x = np.polyval(func, draw_y)
 
         draw_points = (np.asarray([draw_x, draw_y]).T).astype(np.int32)
+        lines.append(draw_points)
         cv2.polylines(mask, [draw_points], False, 255, thickness=4)
     return mask, lines
 

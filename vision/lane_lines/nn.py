@@ -44,7 +44,7 @@ height = 480/scale
 width = 640/scale
 
 # TODO: verify this value
-shapes = ((height, width), ((0.5333333333333333, scale), (0.0, 12.0)))
+shapes = ((height, width), ((0.0, scale), (0.0, 0.0)))
 device = torch.device('cpu')
 weights = "weights/End-to-end.pth"
 
@@ -78,16 +78,14 @@ def get_lane_points(img, path):
     pad_h = int(pad_h)
     ratio = shapes[1][0][1]
 
-    da_predict = da_seg_out[:, :, pad_h:(
-        height-pad_h), pad_w:(width-pad_w)]
+    da_predict = da_seg_out[:, :, 0:height, 0:width]
     da_seg_mask = torch.nn.functional.interpolate(
         da_predict, scale_factor=int(1/ratio), mode='bilinear')
     _, da_seg_mask = torch.max(da_seg_mask, 1)
     da_seg_mask = da_seg_mask.int().squeeze().cpu().numpy()
     # da_seg_mask = morphological_process(da_seg_mask, kernel_size=7)
 
-    ll_predict = ll_seg_out[:, :, pad_h:(
-        height-pad_h), pad_w:(width-pad_w)]
+    ll_predict = ll_seg_out[:, :, 0:height, 0:width]
     ll_seg_mask = torch.nn.functional.interpolate(
         ll_predict, scale_factor=int(1/ratio), mode='bilinear')
     _, ll_seg_mask = torch.max(ll_seg_mask, 1)
@@ -108,8 +106,8 @@ def get_lane_points(img, path):
     cv2.imwrite(f"{out_dir}/img_{name_suffix}", frame)
     # cv2.imwrite('output.png', ll_seg_mask)
     cv2.imshow('img_det', img_det)
-    cv2.imshow('ll_seg_mask', ll_seg_mask)
-    # cv2.waitKey()
+    cv2.imshow('ll_seg_mask', cv2.resize(
+        ll_seg_mask, (640, 480), interpolation=cv2.INTER_AREA))
     return lines
 
 
@@ -121,9 +119,10 @@ def retrieve_lanes(lines, path):
     for line in lines:
         line = list(line)
         x_intercept, dx_sign, angle, x0, y0, x1, y1 = pixel_angles.get_line_equations(
-            line, 340, (0, 0), (0, -15), 0.175)
+            line, 0, (0, 0), (0, -15), 0.175)
+        # line, 0, (0, 0), (0, -15.55), 0.195)
 
-        print(x_intercept, dx_sign, angle, x0, y0)
+        # print(x_intercept, dx_sign, angle, x0, y0)
 
         if not angle or not x_intercept:  # No points on road, or horizontal
             continue
@@ -158,14 +157,20 @@ def retrieve_lanes(lines, path):
 
 out_dir = 'calibration'
 # images = glob.glob('./parking_lanes/*.jpg')
-images = glob.glob('./lane_pictures/9_3/*.png')
+# images = glob.glob('./lane_pictures/costco_9_7/*.png')
+# images = glob.glob('./lane_pictures/neighberhood_9_9/img_1*.png')
+# images = ['.\\lane_pictures\\costco_9_7\\img_1662576257_4.png']
+# images = ['C://Users/rando/Downloads\img_1662757721_7.png']
+images = ['C://Users/rando/Downloads\img_1662941406_0.png']
 if __name__ == '__main__':
     # path = "inference/input/img_1661985240_1.png"
     # path = "mirv_lane_lines.png"
     # path = "img_01.png"
     for path in images:
+        print(path)
         img = cv2.imread(path)
         img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
 
         lane_lines = detect(img, path)
         lanes = retrieve_lanes(lane_lines, path)
+        # cv2.waitKey()

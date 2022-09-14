@@ -1,0 +1,13 @@
+
+official tag recognition/pose estimation: https://github.com/AprilRobotics/apriltag
+official tag generation: https://github.com/AprilRobotics/apriltag-generation
+michigan home page: https://april.eecs.umich.edu/software/apriltag
+michigan tag images repo: https://github.com/AprilRobotics/apriltag-imgs
+
+pypi: https://pypi.org/project/apriltag/
+
+lots of pypis:
+https://pypi.org/project/dt-apriltags/
+https://pypi.org/project/apriltags/
+https://pypi.org/project/apriltag/
+https://pypi.org/project/pupil-apriltags/

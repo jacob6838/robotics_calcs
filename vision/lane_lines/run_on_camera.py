@@ -12,8 +12,10 @@ cam_rgb.setResolution(
 cam_rgb.setInterleaved(False)
 # cam_rgb.setIspScale(12, 19)
 # cam_rgb.setPreviewSize(2560, 1920)
-cam_rgb.setIspScale(6, 35)  # 696,522
-cam_rgb.setPreviewSize(696, 522)
+# cam_rgb.setIspScale(6, 35)  # 696,522
+# cam_rgb.setPreviewSize(696, 522)
+cam_rgb.setIspScale(1, 5)
+cam_rgb.setPreviewSize(812, 608)
 cam_rgb.setColorOrder(depthai.ColorCameraProperties.ColorOrder.RGB)
 
 # full fov frame
@@ -129,13 +131,14 @@ while True:
         frame = qIsp.get().getCvFrame()
         resizedFrame = cv2.resize(
             frame, (640, 480), interpolation=cv2.INTER_LINEAR)
-        cv2.imshow('frame', frame)
+        cv2.imshow('frame', resizedFrame)
 
         key = cv2.waitKey(3)
         if key == ord('q'):
             break
         elif key == ord('t'):  # Quit
             path = f'{run}_{i}.png'
+            cv2.imwrite(f'./{path}', resizedFrame)
 
             # out_dir = 'calibration'
             # name_suffix = path.split('\\')[-1]
@@ -144,3 +147,4 @@ while True:
             # continue
             lane_lines = nn.detect(resizedFrame, path)
             lanes = nn.retrieve_lanes(lane_lines, path)
+            print(lanes)

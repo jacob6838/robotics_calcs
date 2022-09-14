@@ -1,6 +1,7 @@
 import math
 import numpy as np
 from scipy import stats
+import matplotlib.pyplot as plt
 
 HFOV = 69.5
 
@@ -11,16 +12,14 @@ Y = 480/2/scale
 aspect_ratio = Y/X
 
 VFOV = HFOV * aspect_ratio
-DETECTION_VERTICAL_OFFSET = 20/scale
+DETECTION_VERTICAL_OFFSET = 0  # 20/scale
 MIN_LINE_LENGTH = 50/scale
-LINE_EDGE_REMOVE_PERCENT = 10/100
+LINE_EDGE_REMOVE_PERCENT = 5/100
 
 W = 1
 H = 1 * aspect_ratio
 
 D = H/math.tan(math.radians(VFOV/2))
-
-CENTER_ANGLE = 0, -15
 
 theta_h_corner = math.degrees(math.atan(W/math.sqrt(D**2 + H**2)))
 theta_v_corner = math.degrees(math.atan(H/math.sqrt(D**2 + W**2)))
@@ -64,7 +63,7 @@ def get_real_position(x, y, imu_offset, rover_position, center_angle, height):
     theta_v = theta_v_r + center_v
 
     if theta_v >= 0:
-        print("ABOVE HORIZON")
+        # print("ABOVE HORIZON")
         return None, None
     longitudinal_offset = height * math.tan(math.radians(90 + theta_v))
     lateral_offset = longitudinal_offset * math.tan(math.radians(theta_h))
@@ -167,21 +166,31 @@ def get_line_equations(line, imu_offset, rover_position, center_angle, height):
     points_y = []
 
     line = remove_end_of_line(line)
-    line = [[x, y+DETECTION_VERTICAL_OFFSET] for (x, y) in line]
+    line = [[x, y+DETECTION_VERTICAL_OFFSET]
+            for (x, y) in line]
 
     x_intercept, dx_sign = get_intercept_pixels(line)
 
     l = get_line_length(*line[0], *line[-1])
     if l < MIN_LINE_LENGTH:
         return x_intercept, dx_sign, None, None, None, None, None
+    print(line[0], line[-1])
 
     for x, y in line:
-
         p = get_real_position(x, y, imu_offset,
                               rover_position, center_angle, height)
         if p[0] != None and p[1] != None:
             points_x.append(p[0])
             points_y.append(p[1])
+
+    # plot_points_y = [-i for i in points_y]
+
+    # plt.plot(plot_points_y, points_x)
+    # plt.xlabel('x')
+    # plt.ylabel('y')
+    # plt.xlim(-1.5, 1.5)
+    # plt.ylim(0, 8)
+    # plt.show()
 
     if points_x and points_y:
 
@@ -224,8 +233,24 @@ def get_sign(val):
 #       scale, 132/scale, 0, (0, 0), (0, -15), 0.175)])
 # print([i / 0.0254 for i in get_real_position(72 /
 #       scale, 129/scale, 0, (0, 0), (0, -15), 0.175)])
-print([i / 0.0254 for i in get_real_position(0 /
-      scale, 129/scale, 0, (0, 0), (0, -15), 0.175)])
+# print(get_real_position(31 /
+#       scale, 170/scale, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(223 /
+#       scale, 121/scale, 0, (0, 0), (0, -15.0), 0.175))
+print(get_real_position(199 /
+      scale, 108/scale, 0, (0, 0), (0, -15.0), 0.175))
+print(get_real_position(0 /
+      scale, 131/scale, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(435 /
+#       scale, 110/scale, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(639 /
+#       scale, 140/scale, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(875, 221, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(1171, 269, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(890, 223, 0, (0, 0), (0, -15.0), 0.175))
+# print(get_real_position(1163, 266, 0, (0, 0), (0, -15.0), 0.175))
+print(get_real_position(140, 242, 0, (0, 0), (0, -15.0), 0.175))
+print(get_real_position(25, 264, 0, (0, 0), (0, -15.0), 0.175))
 
 
 # print(get_angle_robot_frame([0, 0], [1, 0]))

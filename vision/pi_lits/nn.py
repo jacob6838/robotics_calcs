@@ -10,6 +10,7 @@ import math
 import torchvision.transforms as transforms
 import glob
 import json
+import copy
 
 # os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -40,8 +41,9 @@ degreesPerPixel = hFOV/horizontalPixels
 device = torch.device('cuda:0')
 half = device.type != 'cpu'
 
-piLitModel = torch.load("weights/piLitModel.pth",
-                        map_location='cpu')  # , map_location='cpu'
+piLitModel = torch.load("weights/pi_lit_model_2.pth")  # , map_location='cpu'
+
+# piLitModel = torch.load("weights/piLitModel.pth")  # , map_location='cpu'
 # piLitModel.cuda()
 piLitModel.eval()
 piLitModel.to(device)
@@ -54,25 +56,33 @@ def detect(img, path):
     return piLitDetect(img, path)
 
 
-def piLitDetect(img, path):
+def piLitDetect(img, orig, path):
     frame = img
-    frame_orig = frame
+    frame_orig = orig
     img = transform(img).to(device)
     if img.ndimension() == 3:
         img = img.unsqueeze(0)
 
     mod_out = piLitModel(img)
-    print(mod_out)
     piLitPrediction = mod_out[0]
     bboxList = []
     # print("DETECTING...")
     closest_track_location = None
     closest_track_distance = 5
     for bbox, score in zip(piLitPrediction["boxes"], piLitPrediction["scores"]):
-        print(score, bbox)
+        # print(score, bbox)
         if(score > 0.85 or True):
             # print("GOT A PI LIT")
             x0, y0, x1, y1 = bbox
+
+            if x0 == 0 or x1 == horizontalPixels or y0 == 0 or y1 == verticalPixels:
+                print("Ignoring detection at edge")
+                continue
+
+            if abs(x1 - x0) < 30 or abs(y1 - y0) < 8:  # abs((x1 - x0) * (y1 - y0)) < 200
+                print("Ignoring small detection")
+                continue
+
             centerX = int((x0 + x1)/2)
             centerY = int((y0 + y1)/2)
             bboxList.append(bbox)
@@ -84,6 +94,9 @@ def piLitDetect(img, path):
                 color = (0, 255, 255)
             else:
                 color = (0, 0, 255)
+
+            frame_orig = cv2.rectangle(frame_orig, (int(x0), int(y0)),
+                                       (int(x1), int(y1)), color, 3)
 
             frame = cv2.rectangle(frame, (int(x0), int(y0)),
                                   (int(x1), int(y1)), color, 3)
@@ -125,57 +138,80 @@ def piLitDetect(img, path):
                 angleToPiLit), "ANGLE: ", (angleToPiLitFromIntake), " SCORE: ", score)
 
     name_suffix = path.split('\\')[-1]
-    cv2.imwrite(f"{out_dir}/img_det_{name_suffix}", frame)
-    # cv2.imwrite(f"{out_dir}/img_{name_suffix}", frame_orig)
-    cv2.imshow(name_suffix, frame)
+    # cv2.imwrite(f"{out_dir}_orig/no_mask_{name_suffix}", frame_orig)
+    # cv2.imshow(name_suffix, frame)
+    subdir = "no_matches"
+    if len(bboxList) == 0:
+        subdir = "no_matches"
+    elif len(bboxList) == 1:
+        subdir = "1_match"
+    elif len(bboxList) == 2:
+        subdir = "2_matches"
+    elif len(bboxList) >= 3:
+        subdir = "many_matches"
+    cv2.imwrite(f"{out_dir}/{subdir}/{name_suffix}", frame)
     return bboxList
 
     if closest_track_location is not None:
         piLitLocationPub.publish(closest_track_location)
 
 
-out_dir = 'calibration'
-# images = glob.glob('./parking_lanes/*.jpg')
-# images = glob.glob('./lane_pictures/costco_9_7/*.png')
-# images = glob.glob('./lane_pictures/neighberhood_9_9/img_1*.png')
-# images = ['.\\lane_pictures\\costco_9_7\\img_1662576257_4.png']
-# images = ['C://Users/rando/Downloads\img_1662757721_7.png']
-# images = ['C://Users/rando/Downloads\img_1662941406_0.png']
-# images = glob.glob('C://Users/rando/Downloads/pilit_pictures/*.png')
-# images = ['C://Users/rando/Downloads/pilit_pictures/img_1663014081_58.png']
-images = [
-    'C://Users/rando/Downloads/pilit_pictures/img_1663014081_100.png',
-    'C://Users/rando/Downloads/pilit_pictures/img_1663014081_571.png',
-    'C://Users/rando/Downloads/pilit_pictures/img_1663014081_542.png',
-    'C://Users/rando/Downloads/pilit_pictures/img_1663014081_58.png']
-# images = ['C://Users/rando/Downloads/pilit_pictures/img_1663014081_571.png']
+out_dir = 'model_2_filtered_2'
+images = glob.glob('./pilit_pictures/*.png')
+# images = ['./pilit_pictures/img_1663014081_59.png']
+# images = ['./pilit_pictures/img_1663014081_418.png']
 i = 0
+found = 0
+
+singles = []
+doubles = []
+many = []
+none = []
 if __name__ == '__main__':
-    # path = "inference/input/img_1661985240_1.png"
-    # path = "mirv_lane_lines.png"
-    # path = "img_01.png"
     for path in images:
-        print(path)
-        img = cv2.imread(path)
-        img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
-        # img = cv2.flip(img, 1)
-        # img = cv2.flip(img, 0)
+        try:
+            print(path)
+            img = cv2.imread(path)
+            img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
+            # img = cv2.flip(img, 1)
+            # img = cv2.flip(img, 0)
 
-        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+            orig = copy.deepcopy(img)
 
-        brown_lo = np.array([0, 0, 0])
-        brown_hi = np.array([255, 6, 255])
+            # hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-        # Mask image to only select browns
-        mask = cv2.inRange(hsv, brown_lo, brown_hi)
-        img[mask > 0] = (50, 50, 50)
+            # mask_lo = np.array([0, 53, 0])
+            # mask_hi = np.array([38, 255, 255])
 
-        # Change image to red where we found brown
+            # # # Mask image to only select browns
+            # mask = cv2.inRange(hsv, mask_lo, mask_hi)
+            # img[mask <= 0] = (0, 0, 0)
 
-        pi_lits = piLitDetect(img, path)
+            # name_suffix = path.split('\\')[-1]
+            # print(cv2.imwrite(f"{out_dir}/img_det_{name_suffix}", img))
 
-        pi_lits = detect(img, path)
-        # print(pi_lits)
-        # print(i)
-        i += 1
-    cv2.waitKey()
+            # Change image to red where we found brown
+
+            pi_lits = piLitDetect(img, orig, path)
+            if pi_lits:
+                found += 1
+            if len(pi_lits) == 0:
+                none.append(path)
+            elif len(pi_lits) == 1:
+                singles.append(path)
+            elif len(pi_lits) == 2:
+                doubles.append(path)
+            elif len(pi_lits) >= 3:
+                many.append(path)
+            # print(pi_lits)
+            # print(i)
+            i += 1
+        except:
+            pass
+
+print(len(singles), len(none), len(doubles), len(many))
+print("Singles:", singles)
+print("Doubles:", doubles)
+print("Many:", many)
+print("None:", none)
+print(found/i, found, i)

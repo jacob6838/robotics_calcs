@@ -9,7 +9,8 @@ def empty(i):
 
 # path = "./118_trimmed_in_air_blurry.jpg"
 directory = ''
-files = glob.glob('./lane_lines/lane_pictures/costco/source/*.png')
+# files = glob.glob('./lane_lines/lane_pictures/costco/source/*.png')
+files = ['C://Users/rando/Downloads/pilit_pictures/img_1663014081_58.png']
 cv2.namedWindow("TrackedBars")
 cv2.resizeWindow("TrackedBars", 640, 240)
 
